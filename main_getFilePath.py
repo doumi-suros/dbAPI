@@ -1,36 +1,14 @@
 import sub_excel
 import sub_msc
 
-searchKey = '統一'
+searchKey = '中山'
 
-result = sub_excel.getDbNoList(searchKey)
-print (result)
+dbNoList = sub_excel.getDbNoList(searchKey)
+print (dbNoList)
 
-
-
-
-
+webList = sub_excel.getWebList(dbNoList)
+print (webList)
 
 
 
 
-
-"""
-input = search Key
-
-fun1 (search key)
-    result = dbNo
-
-fun1 (dbNo)
-    result = company full name
-    
-
-
-fun1 (dbNo)
-    result = file date
-
-
-fun2 (dbNo)
-    result = file path 
-
-"""
