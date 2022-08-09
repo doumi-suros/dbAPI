@@ -1,15 +1,24 @@
-from openpyxl import load_workbook, Workbook
+import pandas
 
-exlWB = load_workbook('DBsourceData_220804.xlsx')    #get excel file / workbook
-exlST = exlWB['BaseData']    #get file work sheet
+excelFile = 'DBsourceData_220809.xlsx'
+baseData = pandas.read_excel(excelFile, sheet_name=0, usecols=[0,1,2,3,4,6,7,8,10])
+reptList = pandas.read_excel(excelFile, sheet_name=2, usecols=[0,1,2,3,22])
+baseHead = ['DB編號', '中文全名', '中文簡稱', '英文全名', '英文簡稱', '別名1', '別名2', '別名3', '股票簡稱']
+reptHead = ['DB編號', '報告檔案夾', 'Date', 'pdfName', 'csvName']
 
 
-#by search key to search single column 
-def sSearch (searchKey, searchCol):
-    for searchR in range (1, exlST.max_row + 1):
-        for searchC in range (1, exlST.max_column + 1):
-            a = exlST.cell(row = searchR, column = searchC)
-            if a == searchKey:
-                print (a, 'ROW '+str(searchR), 'COL '+str(searchC))
+dbNoList = []
 
+#input search key word to get dbNoList
+def getDbNoList (searchKey):
+    for j in range (1, 9):
+        for i in range (1, 1903):
+            cellValue = baseData[baseHead[j]].values[i]
+            if searchKey.lower() in str(cellValue).lower():
+                dbNo = str(baseData[baseHead[0]].values[i])
+                if dbNo not in dbNoList:
+                    dbNoList.append(dbNo)
+            i+=1
+        j+=1
+    return dbNoList
 

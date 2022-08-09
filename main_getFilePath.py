@@ -1,7 +1,21 @@
 import sub_excel
 import sub_msc
 
+searchKey = '統一'
 
+result = sub_excel.getDbNoList(searchKey)
+print (result)
+
+
+
+
+
+
+
+
+
+
+"""
 input = search Key
 
 fun1 (search key)
@@ -19,3 +33,4 @@ fun1 (dbNo)
 fun2 (dbNo)
     result = file path 
 
+"""
