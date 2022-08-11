@@ -1,14 +1,16 @@
 import sub_excel
-import sub_msc
 
-searchKey = '中山'
+searchKey = '圖書館'
 
 dbNoList = sub_excel.getDbNoList(searchKey)
-print (dbNoList)
 
 webList = sub_excel.getWebList(dbNoList)
-print (webList)
 
+for i in range (0, len(webList)):
+    for j in range (0, 4):
+        print (webList[i][j])
+        j+=1
+    i+=1
 
 
 

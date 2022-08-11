@@ -1,1 +1,1 @@
-import xlrd
+#miscellaneous functions
