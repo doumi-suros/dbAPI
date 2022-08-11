@@ -16,7 +16,7 @@ cateList = ['edu', 'fin', 'gov', 'life', 'medi', 'net', 'manu', 'serv', 'stor', 
 stockList = ['上市', '上櫃', '興櫃']    #usecols = [11]
 rankList = ['100', '300']    #usecols = [13]
 tw50 = ['台50']    #usecols = [14]
-filterKeys = [cateListHtml, stockList, rankList, tw50]
+filterKeysCate = [cateListHtml, stockList, rankList, tw50]
 
 
 #input search key word to get dbNoList
@@ -79,17 +79,35 @@ def getWebList (dbNoList):
 #get filter key category
 def getFKeyCate (filterKey):
     for i in range (0, 4):
-        if filterKey not in filterKeys[i]:
+        if filterKey not in filterKeysCate[i]:
             i+=1
         else:
             fKeyCate = str(baseHeadF[i+1])
-            return fKeyCate
+            if i == 0:
+                p = cateListHtml.index(filterKey)
+                filterKey = cateList[p]
+            return fKeyCate, filterKey
 
 
 #get dbNoList by filtering single column
 def getDbNoListF1 (filterKey):
+    fKeyCate = getFKeyCate (filterKey)[0]
+    filterKey = getFKeyCate (filterKey)[1]
+    dbNoList = []
+    for i in range (1, 1903):    #BaseData search rows length
+        cellValue = str(baseDataF[fKeyCate].values[i]).strip()    #get cell value on columns by rows
+        if filterKey in cellValue:    #if cell contains filter Key
+            dbNo = str(baseDataF[baseHeadF[0]].values[i]).strip()    #get dbNo
+            if dbNo not in dbNoList:    #exclude same dbNo
+                dbNoList.append(dbNo)    #add new dbNo to list
+        i+=1
+    return dbNoList
+
+"""
+#get dbNoList by filtering single column
+def getDbNoListF1 (filterKey):
     for i in range (0, 4):
-        if filterKey not in filterKeys[i]:
+        if filterKey not in filterKeysCate[i]:
             i+=1
         else:
             fKeyCate = str(baseHeadF[i+1])
@@ -107,6 +125,72 @@ def getDbNoListF1 (filterKey):
                 dbNoList.append(dbNo)    #add new dbNo to list
         i+=1
     return dbNoList
+"""
+
+
+#get dbNoList by multiple filters
+def dbNoListFs (filterKeys):
+    fKeysLenList = [len(filterKeys[0]), len(filterKeys[1]), len(filterKeys[2]), len(filterKeys[3])]
+    dbNoListFsA = []
+    for i in range (0, 4):    
+        if fKeysLenList[i] == 0:
+            i+=1
+            continue
+        if fKeysLenList[i] == 1:
+            globals()['dbNoListFs'+str(i)] = getDbNoListF1(filterKeys[i][0])
+            iListLen = len(globals()['dbNoListFs'+str(i)])
+            aListLen = len(dbNoListFsA)
+            if aListLen == 0:
+                if iListLen == 0:
+                    i+=1
+                    continue
+                dbNoListFsA = globals()['dbNoListFs'+str(i)]
+                i+=1
+                continue
+            for a in range (0, aListLen):
+                dbNo = dbNoListFsA[a]
+                if dbNo not in globals()['dbNoListFs'+str(i)]:
+                    dbNoListFsA[a] = 'x'
+                a+=1
+            while 'x' in dbNoListFsA:
+                dbNoListFsA.remove('x')
+            i+=1
+            continue
+        if fKeysLenList[i] > 1:
+            for j in range (0, fKeysLenList[i]):
+                if j == 0:
+                    globals()['dbNoListFs'+str(i)] = getDbNoListF1(filterKeys[i][0])
+                    j+=1
+                    continue
+                globals()['dbNoListFs'+str(i)+'-'+str(j)] = getDbNoListF1 (filterKeys[i][j])
+                jListLen = len(globals()['dbNoListFs'+str(i)+'-'+str(j)])
+                for m in range (0, jListLen):
+                    dbNo = globals()['dbNoListFs'+str(i)+'-'+str(j)][m]
+                    if dbNo not in globals()['dbNoListFs'+str(i)]:
+                        globals()['dbNoListFs'+str(i)].append(dbNo)
+                    m+=1
+                j+=1
+            iListLen = len(globals()['dbNoListFs'+str(i)])
+            aListLen = len(dbNoListFsA)
+            if aListLen == 0:
+                if iListLen == 0:
+                    i+=1
+                    continue
+                dbNoListFsA = globals()['dbNoListFs'+str(i)]
+                i+=1
+                continue
+            for b in range (0, aListLen):
+                dbNo = dbNoListFsA[b]
+                if dbNo not in globals()['dbNoListFs'+str(i)]:
+                    dbNoListFsA[b] = 'x'
+                b+=1
+            while 'x' in dbNoListFsA:
+                dbNoListFsA.remove('x')
+        i+=1
+    return dbNoListFsA
+
+
+
 
 
 
