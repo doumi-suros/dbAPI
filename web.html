@@ -1,46 +1,337 @@
-<!--
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>SUROS Lab</title>
-        <?PHP
-        echo shell_exec("python main_getFilePath.py");
-        ?>
-    </head>
-    <body>
-        
-    </body>
-</html>
--->
-
 <!DOCTYPE html>
 <html>
+    
     <head>
         <meta charset="utf-8">
-        <script language="javascript">
-            function exec1(command){
-                var ws = new ActiveXObject("WScript.Shell");
-                ws.run(command);
-            }
-        </script>
+        <title>Suros</title>   
     </head>
-    <body>
-        <div id="header">
-            <h1>簡單呼叫python</h1>
+    <style type="text/css">
+        body {
+            background-image: url("bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        div{
+        
+        }
+        .input{
+            color: darkgrey;
+            font-family: Microsoft JhengHei;
+            border-radius: 15px;
+        }
+        .box {
+            width: 30%;
+            height: 1500px;
+            float: left;
+            font-family: Microsoft JhengHei;
+        }
+        .box2 {
+            width: 55%;
+            height: 1500px;
+            float: right;
+            background-clip: content-box;
+            /*background-color: rgba(181, 201, 227, 0.9);*/
+            font-family: Microsoft JhengHei;
+        }
+        .box3 {
+            width: 55%;
+            height: 100px;
+            float: right;
+            background-clip: content-box;
+            font-family: Microsoft JhengHei;
+           }
+        .box2-2 {            
+            height: 1500px;
+            background-clip: content-box;
+            background-color: rgba(181, 201, 227, 0.9);
+            overflow: scroll;
+            overflow-x: hidden;
+            font-family: Microsoft JhengHei;
+        }
+        .btn {
+            background: #8cc9f2;
+   /*         background-image: -webkit-linear-gradient(top, #8cc9f2, #2980b9);
+            background-image: -moz-linear-gradient(top, #8cc9f2, #2980b9);
+            background-image: -ms-linear-gradient(top, #8cc9f2, #2980b9);
+            background-image: -o-linear-gradient(top, #8cc9f2, #2980b9);
+            background-image: linear-gradient(to bottom, #8cc9f2, #2980b9);*/
+            /*-webkit-border-radius: 0;
+            -moz-border-radius: 5;*/
+            border: 15px #8cc9f2 ;
+            border-radius: 15px;
+            text-shadow: 1px 1px 3px #d9d6d9;
+            color: #ffffff;
+            font-size: 26px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+            font-family: Microsoft JhengHei;
+            float: center;
+        }
+        .item {
+            display: flex;
+            color: #000000;
+            font-family: Microsoft JhengHei;
+        }
+        .list {
+            padding: 0px 0px 0px 0px;
+            margin-block-start: 0px;
+            margin-block-end: 0em;
+            font-family: Microsoft JhengHei;
+            
+        }
+        .img {
+            width: 120px;
+            height: auto;
+        }
+        .title {
+            height: 100px;
+            background-color: rgba(112, 234, 238, 0.9);
+            font-family: Microsoft JhengHei;
+        }
+        .name {
+            width: 53%;
+            padding: 2px 10px 2px 100px;
+            font-family: Microsoft JhengHei;
+        }
+        .date {
+            width: 22%;
+            padding: 2px 20px 2px 20px;
+            font-family: Microsoft JhengHei;
+        }
+        .file {
+            width: 15%;
+            padding: 2px 20px 0px 20px;
+            font-family: Microsoft JhengHei;
+        }
+        .hrstyle {
+            border:none;
+            border-top:10px dotted; #DCFFFA;
+            line-height: 10em;
+            height:25px;
+            padding: 0px 20px 10px 20px;
+            opacity: .8;
+        }
+        .icony {
+            position: absolute;
+            bottom: 220px;
+            left: 1200px;
+            height: 200px;
+            font-family: Microsoft JhengHei;
+        }
+        .iconn {
+            position: absolute;
+            bottom: 220px;
+            left: 900px;
+            height: 200px;
+            font-family: Microsoft JhengHei;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            left: 1700px;
+            height: 220px;
+            font-family: Microsoft JhengHei;
+        }
+        p {
+            margin-block-start: 50px;
+            margin-block-end: 50px;
+            font-family: Microsoft JhengHei;
+        }
+    </style>
+
+    <body >
+
+        <div style="text-align: center; padding: 100px 50px 100px 600px; font-family: Microsoft JhengHei;">
+            <h1><span  style="font-size: 700%; color: #DCFFFA;">外部資產調查報告查詢</span></h1>
         </div>
-        <div id="nav">
-            簡單呼叫python
-            <a href="hello_world.py" target="show"> 程式碼 </a>
-            <input type="button" value="執行 python" onclick="exec1('python')" />  <!--呼叫python在這裡--><br/>
+
+        <img src="suros.jpg"
+             alt="suros"
+             width="1000px"
+             style="position: absolute; top: 65px; left:300px;">
+
+        <div class=box style="color: #DCFFFA; font-size: 90px; padding: 60px 0px 30px 270px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class ="input" type="text" id="Company" style="font-size:90px" placeholder="請輸入公司名">&nbsp;<img src="Accept-icon.png" class="icon">
+            <br>
+            <hr size="4px" line-height="2px" align="center" color="#8cc9f2" width="30%" opacity=".3">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class ="input" type="url" style="font-size:90px" placeholder="請輸入網址">&nbsp;<img src="Error-icon.png" class="icon">
+            <br>
+
+            
+            <hr size="10px" line-height="5px" align="center" color="#8cc9f2" width="100%">
+            <input type="checkbox" style="width:70px;height:70px;" name="cb2" value="edu">教育知識
+            <input type="checkbox" style="width:70px;height:70px;"name="cb3" value="fin">金融業
+            <input type="checkbox" style="width:70px;height:70px;"name="cb4" value="gov">政府機關<br>
+            <input type="checkbox" style="width:70px;height:70px;"name="cb5" value="life">能源環境
+            <input type="checkbox" style="width:70px;height:70px;"name="cb7" value="medi">醫藥業
+            <input type="checkbox" style="width:70px;height:70px;"name="cb8" value="net">電網資訊<br>
+            <input type="checkbox" style="width:70px;height:70px;"name="cb9" value="manu">傳統產業
+            <input type="checkbox" style="width:70px;height:70px;"name="cb6" value="ser">服務業
+            <input type="checkbox" style="width:70px;height:70px;"name="cb10" value="stor">百貨零售<br>
+            <input type="checkbox" style="width:70px;height:70px;"name="cb11" value="tech">電子科技
+            <input type="checkbox" style="width:70px;height:70px;"name="cb1" value="com" ;>其他
+                <div class="hrstyle" /></div>
+
+
+            <input type="checkbox" style="width:70px;height:70px;"name="cb21" value="上市">上市&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" style="width:70px;height:70px;"name="cb22" value="上櫃">上櫃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" style="width:70px;height:70px;"name="cb23" value="興櫃">興櫃
+                <div class="hrstyle" /></div>
+            <input type="checkbox" style="width:70px;height:70px;"name="cb31" value="100大">100大&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" style="width:70px;height:70px;"name="cb32" value="200大">300大
+            
+                <div class="hrstyle" /></div>
+            <input type="checkbox" style="width:70px;height:70px;"name="cb33" value="台50">台50
+            <br>
+            <center>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="Accept-icon.png" class="icony">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="Error-icon.png" class="iconn">
+            </center>
+
         </div>
-        <div id="section">
-            <h2>程式碼框 </h2>
-            <iframe name="show" id="show" width="1100" height="466"/>
+
+        <div class="box3" style="color: #DCFFFA; font-size: 80px; padding: 0px 250px 10px 10px;">
+            <ul class="list">
+
+                <li class="item">
+                    <div class="title" style="padding: 5px 5px 5px 250px; width: 1620px; font-weight: bold;">公司名稱</div>
+                    <div class="title" style="padding: 5px; width: 680px; font-weight: bold;">日期</div>
+                    <div class="title" style="padding: 5px; width: 650px; font-weight: bold;">檔案</div>
+                </li>
+            </ul>
         </div>
-    </body>
+
+        <div class="box2" style="color: #DCFFFA; font-family: Microsoft JhengHei; font-size: 70px; padding: 0px 250px 0px 100px;">
+            <div class="box2-2" >
+                <ul class="list">
+
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+         </div>
+
+      <footer>
+                <p style="color: #DCFFFA;font-size: 200%;text-align: center;">Copyright © 2022 SUROS Inc. 蘇羅士科技股份有限公司</p>
+      </footer>
+
+</body>
 </html>
-
-
-
-
