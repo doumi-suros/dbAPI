@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style type="text/css">
+        body {
+            background-image: url("bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        div{
+        
+        }
+        .box {
+            width: 27%;
+            height: 2000px;
+            float: left;
+        }
+        .box2 {
+            width: 60%;
+            height: 2000px;
+            float: right;
+            background-clip: content-box;
+            background-color: rgba(181, 201, 227, 0.9);
+        }
+        .box3 {
+            width: 60%;
+            height: 100px;
+            float: right;
+            background-clip: content-box;
+           }
+        .box2-2 {            
+            height: 2000px;
+            background-clip: content-box;
+            background-color: rgba(181, 201, 227, 0.9);
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        .btn {
+            background: #8cc9f2;
+            background-image: -webkit-linear-gradient(top, #8cc9f2, #2980b9);
+            background-image: -moz-linear-gradient(top, #8cc9f2, #2980b9);
+            background-image: -ms-linear-gradient(top, #8cc9f2, #2980b9);
+            background-image: -o-linear-gradient(top, #8cc9f2, #2980b9);
+            background-image: linear-gradient(to bottom, #8cc9f2, #2980b9);
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border: 15px #8cc9f2 double;
+            border-radius: 0px;
+            text-shadow: 1px 1px 3px #d9d6d9;
+            color: #ffffff;
+            font-size: 26px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+        .item {
+            display: flex;
+            color: #000000;
+        }
+        .list {
+            padding: 0px 0px 0px 0px;
+            margin-block-start: 0px;
+            margin-block-end: 0em;
+            
+        }
+        .img {
+            width: 150px;
+            height: auto;
+        }
+        .title {
+            height: 100px;
+            background-color: rgba(112, 234, 238, 0.9);
+        }
+        .name {
+            width: 53%;
+            padding: 20px 20px 20px 120px;
+        }
+        .date {
+            width: 22%;
+            padding: 20px 20px 20px 20px;
+        }
+        .file {
+            width: 15%;
+            padding: 20px 20px 20px 20px;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            left: 3750px;
+            height: 150px;
+        }
+        p {
+            margin-block-start: 50px;
+            margin-block-end: 50px;
+        }
+    </style>
+
+    <body >
+
+        <div style="text-align: center; padding: 100px 50px 100px 600px;">
+            <h1><span style="font-size: 700%; color: #DCFFFA;">外部資產調查報告查詢</span></h1>
+        </div>
+
+        <img src="suros.jpg"
+             alt="suros"
+             width="1000px"
+             style="position: absolute; top: 50px; left:300px;">
+
+        <div class=box style="color: #DCFFFA; font-size: 90px; padding: 100px 30px 40px 270px;">
+            <input type="text" style="font-size:100px" placeholder="請輸入公司名">
+            <br> <br>
+            <input type="url" style="font-size:100px" placeholder="請輸入網址">
+            <br>
+
+            <hr size="6px" align="center" color="black" width="100%">
+            產業別
+            <br>
+            <input type="checkbox" name="cb2" value="edu" style="zoom:500%">教育知識
+            <input type="checkbox" name="cb3" value="fin" style="zoom:500%">金融業
+            <input type="checkbox" name="cb4" value="gov" style="zoom:500%">政府機關<br>
+            <input type="checkbox" name="cb5" value="life" style="zoom:500%">能源環境
+            <input type="checkbox" name="cb7" value="medi" style="zoom:500%">醫藥業
+            <input type="checkbox" name="cb8" value="net" style="zoom:500%">電網資訊<br>
+            <input type="checkbox" name="cb9" value="manu" style="zoom:500%">傳統產業
+            <input type="checkbox" name="cb6" value="ser" style="zoom:500%">服務業
+            <input type="checkbox" name="cb10" value="stor" style="zoom:500%">百貨零售<br>
+            <input type="checkbox" name="cb11" value="tech" style="zoom:500%">電子科技
+            <input type="checkbox" name="cb1" value="com" style="zoom:500%" ;>其他
+            <hr size="6px" align="center" color="black" width="100%">
+
+            <input type="checkbox" name="cb21" value="上市" style="zoom:500%">上市
+            <input type="checkbox" name="cb22" value="上櫃" style="zoom:500%">上櫃
+            <input type="checkbox" name="cb23" value="興櫃" style="zoom:500%">興櫃
+            <br>
+            <hr size="6px" align="center" color="black" width="100%">
+            <input type="checkbox" name="cb31" value="100大" style="zoom:500%">100大
+            <input type="checkbox" name="cb32" value="200大" style="zoom:500%">300大
+            <br>
+            <hr size="6px" align="center" color="black" width="100%">
+            <input type="checkbox" name="cb33" value="台50" style="zoom:500%">台50
+            <br>
+            <br>
+            <center>
+                <input class="btn" type="submit" style="font-size:70px" value="確認">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="btn" type="reset" style="font-size:70px" value="重新輸入">
+            </center>
+
+        </div>
+
+        <div class="box3" style="color: #DCFFFA; font-size: 80px; padding: 0px 250px 10px 10px;">
+            <ul class="list">
+
+                <li class="item">
+                    <div class="title" style="padding: 5px 5px 5px 120px; width: 1620px; ">公司名稱</div>
+                    <div class="title" style="padding: 5px; width: 680px; ">日期</div>
+                    <div class="title" style="padding: 5px; width: 650px; ">檔案</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="box2" style="color: #DCFFFA; font-family: Microsoft JhengHei; font-size: 100px; padding: 0px 250px 0px 100px;">
+            <div class="box2-2" >
+                <ul class="list">
+
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="name">這邊是要預留十五個字的公司名稱</div>
+                        <div class="date">2022/10/18</div>
+                        <div class="file">
+                            <a href="台視_ttv.com.tw/ttv.com.tw_summary_Jun_17_2022.pdf" target="_blank"><img src="pdf_logo.png" class="img"></a>
+                            &nbsp;
+                            <a href="台視_ttv.com.tw/ttv.com.tw_findings_Jun_17_2022.csv"><img src="csv_logo.png" class="img"></a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+         </div>
+
+            <footer>
+                <p style="color: #DCFFFA;font-size: 300%;text-align: center;">Copyright © 2022 SUROS Inc. 蘇羅士科技股份有限公司</p>
+            </footer>
+
+</body>
+</html>
