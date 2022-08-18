@@ -1,0 +1,300 @@
+body {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+footer {
+  position: absolute;
+  bottom: 15%;
+  left: 40%;
+  height: 10%;
+  font-family: Microsoft JhengHei;
+}
+
+p {
+  margin-block-start: 50%;
+  margin-block-end: 50%;
+  font-family: Microsoft JhengHei;
+}
+
+div{
+  font-family: Microsoft JhengHei;
+}
+
+.h1{
+  position:absolute;
+  top:7%;
+  left :38%;
+  color: #bbc4ff;
+  font-size:600%;
+  font-family: Microsoft JhengHei;
+  letter-spacing: 20px;
+}
+
+.input1{
+  color: darkgrey;
+  font-family: Microsoft JhengHei;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 73%;
+  left: 7%;
+  height: 5%;
+  width: 31%;
+}
+
+.input2{
+  color: darkgrey;
+  font-family: Microsoft JhengHei;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 65%;
+  left: 7%;
+  height: 5%;
+  width: 31%;
+}
+
+.box {
+  width: 32%;
+  float: left;
+  font-family: Microsoft JhengHei;
+}
+
+.box2 {
+  width: 53%;
+  float: right;
+  background-clip: content-box;
+  /*background-color: rgba(181, 201, 227, 0.9);*/
+  font-family: Microsoft JhengHei;
+  position: absolute;
+  bottom: 68.8%;
+  left: 40.8%;
+  height: 5%;
+  width: 53%;
+}
+
+.box2-2 {
+  height: 1200%;
+  background-clip: content-box;
+  background-color: rgba(0, 0, 0, 0.3);
+  overflow: scroll;
+  overflow-x: hidden;
+  font-family: Microsoft JhengHei;
+}
+
+.box3 {
+  width: 53%;
+  height: 100px;
+  float: right;
+  background-clip: content-box;
+  font-family: Microsoft JhengHei;
+  position: absolute;
+  bottom: 73%;
+  left: 40.8%;
+  height: 5%;
+  width: 53%;
+}
+
+.item {
+  display: flex;
+  color: #ffffff;
+  font-family: Microsoft JhengHei;
+}
+
+.list {
+  padding: 0% 0% 0% 0%;
+  margin-block-start: 0%;
+  margin-block-end: 0%;
+  font-family: Microsoft JhengHei;
+}
+
+.img {
+  width: 40%;
+  height: auto;
+}
+
+.title {
+  height: 50%;
+  background-color: rgb(135, 135, 135);
+  font-family: Microsoft JhengHei;
+}
+
+.name {
+  width: 53%;
+  padding: 0.3% 2% 2% 2%;
+  font-family: Microsoft JhengHei;
+}
+
+.date {
+  width: 22%;
+  padding: 0.3% 2% 2% 2%;
+  font-family: Microsoft JhengHei;
+}
+
+.file {
+  width: 15%;
+  padding: 0.3% 0.5% 0% 1%;
+  font-family: Microsoft JhengHei;
+}
+
+.hrstyle0 {
+  border: 0;
+  height: 1%;
+  background: rgb(255, 255, 255);
+  background-image: linear-gradient(to right, rgb(255, 247, 247), rgb(255, 255, 255), rgb(255, 255, 255));
+  position: absolute;
+  bottom: 53%;
+  left: 6.2%;
+  width: 33%;
+}
+
+.icon1 {
+  position: absolute;
+  bottom: 57%;
+  left: 34%;
+  height: 6%;
+  font-family: Microsoft JhengHei;
+}
+
+.icon2 {
+  position: absolute;
+  bottom: 57%;
+  left: 28%;
+  height: 6%;
+  font-family: Microsoft JhengHei;
+}
+
+.icon3 {
+  position: absolute;
+  bottom: 9%;
+  left: 34%;
+  height: 6%;
+  font-family: Microsoft JhengHei;
+}
+
+.icon4 {
+  position: absolute;
+  bottom: 9%;
+  left: 28%;
+  height: 6.8%;
+  font-family: Microsoft JhengHei;
+}
+
+.check1{
+  position: absolute;
+  bottom: 46%;
+  left: 7%;
+  font-family: Microsoft JhengHei;
+}
+
+.check2{
+  position: absolute;
+  bottom: 46%;
+  left: 18.5%;  
+  font-family: Microsoft JhengHei;
+}
+
+.check3{
+  position: absolute;
+  bottom: 46%;
+  left: 28%;
+  font-family: Microsoft JhengHei;
+}
+
+.check4{
+  position: absolute;
+  bottom: 41%;
+  left: 7%;
+  font-family: Microsoft JhengHei;
+}
+
+.check5{
+  position: absolute;
+  bottom: 41%;
+  left: 18.5%;
+  font-family: Microsoft JhengHei;
+}
+
+.check6{
+  position: absolute;
+  bottom: 41%;
+  left: 28%;
+  font-family: Microsoft JhengHei;
+}
+
+.check7{
+  position: absolute;
+  bottom: 36%;
+  left: 7%;
+  font-family: Microsoft JhengHei;
+}
+
+.check8{
+  position: absolute;
+  bottom: 36%;
+  left: 18.5%;
+  font-family: Microsoft JhengHei;
+}
+
+.check9{
+  position: absolute;
+  bottom: 36%;
+  left: 28%;
+  font-family: Microsoft JhengHei;
+}
+
+.check10{
+  position: absolute;
+  bottom: 31%;
+  left: 7%;
+  font-family: Microsoft JhengHei;
+}
+
+.check11{
+  position: absolute;
+  bottom: 31%;
+  left: 18.5%;
+  font-family: Microsoft JhengHei;
+}
+
+.check12{
+  position: absolute;
+  bottom: 24%;
+  left: 7%;
+  font-family: Microsoft JhengHei;
+}
+
+.check13{
+  position: absolute;
+  bottom: 24%;
+  left: 18.5%;
+  font-family: Microsoft JhengHei;
+}
+
+.check14{
+  position: absolute;
+  bottom: 24%;
+  left: 28%;
+  font-family: Microsoft JhengHei;
+}
+
+.check15{
+  position: absolute;
+  bottom: 17%;
+  left: 7%;
+  font-family: Microsoft JhengHei;
+}
+
+.check16{
+  position: absolute;
+  bottom: 17%;
+  left: 18.5%;
+  font-family: Microsoft JhengHei;
+}
+.check17{
+  position: absolute;
+  bottom: 10%;
+  left: 7%;
+  font-family: Microsoft JhengHei;
+}
+
