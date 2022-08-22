@@ -1,300 +1,293 @@
-body {
-  background-image: url("background.jpg");
+body{
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  background-image: url("../image/bg_2208A.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-footer {
-  position: absolute;
-  bottom: 15%;
-  left: 40%;
-  height: 10%;
-  font-family: Microsoft JhengHei;
-}
-
-p {
-  margin-block-start: 50%;
-  margin-block-end: 50%;
-  font-family: Microsoft JhengHei;
 }
 
 div{
   font-family: Microsoft JhengHei;
 }
 
-.h1{
-  position:absolute;
-  top:7%;
-  left :38%;
-  color: #bbc4ff;
-  font-size:600%;
-  font-family: Microsoft JhengHei;
-  letter-spacing: 20px;
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.input1{
-  color: darkgrey;
-  font-family: Microsoft JhengHei;
-  border-radius: 15px;
-  position: absolute;
-  bottom: 73%;
-  left: 7%;
-  height: 5%;
-  width: 31%;
-}
-
-.input2{
-  color: darkgrey;
-  font-family: Microsoft JhengHei;
-  border-radius: 15px;
-  position: absolute;
-  bottom: 65%;
-  left: 7%;
-  height: 5%;
-  width: 31%;
-}
-
-.box {
-  width: 32%;
+li{
   float: left;
-  font-family: Microsoft JhengHei;
 }
 
-.box2 {
-  width: 53%;
-  float: right;
-  background-clip: content-box;
-  /*background-color: rgba(181, 201, 227, 0.9);*/
-  font-family: Microsoft JhengHei;
-  position: absolute;
-  bottom: 68.8%;
-  left: 40.8%;
-  height: 5%;
-  width: 53%;
+
+img{
+  width:100%;
+  height:auto;
 }
 
-.box2-2 {
-  height: 1200%;
-  background-clip: content-box;
-  background-color: rgba(0, 0, 0, 0.3);
-  overflow: scroll;
-  overflow-x: hidden;
-  font-family: Microsoft JhengHei;
+button{
+  border: 0;
+  background-color: #ff0000;
+  border-radius:10%;
+  cursor:pointer;
 }
 
-.box3 {
-  width: 53%;
-  height: 100px;
-  float: right;
-  background-clip: content-box;
-  font-family: Microsoft JhengHei;
-  position: absolute;
-  bottom: 73%;
-  left: 40.8%;
-  height: 5%;
-  width: 53%;
-}
 
-.item {
-  display: flex;
+hr{
+  position: fixed;
+  align-items: center;
   color: #ffffff;
+}
+
+.line_35A{
+  top: 47%;
+  left: 5.3%;
+  width:31.5%;
+}
+
+.line_35B1{
+  top: 68%;
+  left: 6.3%;
+  width:29%;
+}
+
+.line_35B2{
+  top: 75%;
+  left: 6.3%;
+  width:29%;
+}
+
+.line_35B3{
+  top: 82%;
+  left: 6.3%;
+  width:29%;
+}
+
+
+p{
+  margin-block-start: 50%;
+  margin-block-end: 50%;
   font-family: Microsoft JhengHei;
 }
 
-.list {
-  padding: 0% 0% 0% 0%;
-  margin-block-start: 0%;
-  margin-block-end: 0%;
+footer{
+  position: fixed;
+  bottom: 13%;
+  left: 40%;
+  height: 10%;
   font-family: Microsoft JhengHei;
+  color: #DCFFFA;
+  font-size: 200%;
+  text-align: center;
 }
+
+/*for upper area*/
+.block_head{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 20%;
+}
+
+/*for lower area*/
+.block_body{
+  position: fixed;
+  top: 20%;
+  left: 0%;
+  width: 100%;
+  height: 80%;
+}
+
+/*for head-left*/
+.block_25x20{
+  position:fixed;
+  top: 0%;
+  left: 0%;
+  width: 25%;
+  height: 20%;
+}
+
+/*for head-right*/
+.block_75x20{
+  position:fixed;
+  top: 0%;
+  left: 25%;
+  width: 75%;
+  height: 20%;
+}
+
+/*for body-left-upper*/
+.block_35x30{
+  position:fixed;
+  top: 20%;
+  left: 0%;
+  width: 35%;
+  height: 30%;
+
+}
+
+/*for body-left-lower*/
+.block_35x50{
+  position:fixed;
+  top: 50%;
+  left: 0%;
+  width: 35%;
+  height: 50%;
+  padding-left: 7%;
+}
+
+/*for body-right*/
+.block_65x80{
+  position:fixed;
+  top: 20%;
+  left: 35%;
+  width: 65%;
+  height: 80%;
+}
+
 
 .img {
-  width: 40%;
+  width:20%;
+  height:auto;
+}
+
+
+.logo_suros{
+  position:fixed;
+  top:4%;
+  left :7.2%;
+  width: 28%;
+}
+
+.icon_search{
+  position: fixed;
+  top: 40%;
+  left: 30%;
+  width: 3%;
   height: auto;
 }
 
-.title {
-  height: 50%;
-  background-color: rgb(135, 135, 135);
-  font-family: Microsoft JhengHei;
+.icon_del{
+  position: fixed;
+  top: 40%;
+  left: 23%;
+  width: 3%;
+  height:auto;
 }
 
-.name {
-  width: 53%;
-  padding: 0.3% 2% 2% 2%;
-  font-family: Microsoft JhengHei;
+.icon_filter{
+  position: fixed;
+  top: 87%;
+  left: 30%;
+  width: 3%;
+  height: auto;
 }
 
-.date {
-  width: 22%;
-  padding: 0.3% 2% 2% 2%;
-  font-family: Microsoft JhengHei;
+.icon_no_filter{
+  position: fixed;
+  top: 87%;
+  left: 23%;
+  width: 3%;
+  height:auto;
 }
 
-.file {
-  width: 15%;
-  padding: 0.3% 0.5% 0% 1%;
+.title_head{
+  position:fixed;
+  top:7.5%;
+  left :34.2%;
+  color: #ffffff;
+  font-size:1450%;
   font-family: Microsoft JhengHei;
+  font-weight: bolder;
+  letter-spacing: 7%;
 }
 
-.hrstyle0 {
-  border: 0;
-  height: 1%;
-  background: rgb(255, 255, 255);
-  background-image: linear-gradient(to right, rgb(255, 247, 247), rgb(255, 255, 255), rgb(255, 255, 255));
-  position: absolute;
-  bottom: 53%;
-  left: 6.2%;
-  width: 33%;
+/*for checkbox with text*/
+.txt_with_box{
+  color: #ffffff;
+  font-family: Microsoft JhengHei;
+  font-size:480%;
+  letter-spacing: 0.5%;
+  font-weight: bold;
 }
 
-.icon1 {
-  position: absolute;
-  bottom: 57%;
-  left: 34%;
-  height: 6%;
+
+/*for list header row*/
+.list_header{
+  position: fixed;
+  top: 24%;
+  left: 38%;
+  width: 55%;
+  height: 5%;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-size: 500%;
   font-family: Microsoft JhengHei;
+  font-weight: bolder;
+  text-align: center;
 }
 
-.icon2 {
-  position: absolute;
-  bottom: 57%;
-  left: 28%;
-  height: 6%;
+
+/*for list content row*/
+.list_row{
+  position: fixed;
+  top: 29%;
+  left: 38%;
+  width: 55%;
+  height: 63%;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #000000;
+  font-size:450%;
   font-family: Microsoft JhengHei;
+  overflow:auto;
 }
 
-.icon3 {
-  position: absolute;
-  bottom: 9%;
-  left: 34%;
-  height: 6%;
-  font-family: Microsoft JhengHei;
+.list_name{
+  width: 54%;
+  margin: 0.1% 0% 0.05% 3.5%;
 }
 
-.icon4 {
-  position: absolute;
-  bottom: 9%;
-  left: 28%;
-  height: 6.8%;
-  font-family: Microsoft JhengHei;
+.list_date{
+  width: 19%;
+  margin: 0.1% 0% 0.05% 0%;
 }
 
-.check1{
-  position: absolute;
-  bottom: 46%;
-  left: 7%;
-  font-family: Microsoft JhengHei;
+
+.list_file{
+  width: 20%;
+  margin: 0.1% 0% 0.05% 0%;
 }
 
-.check2{
-  position: absolute;
-  bottom: 46%;
-  left: 18.5%;  
+
+.search_bar1{
+  position: fixed;
+  top: 24%;
+  left: 7.2%;
+  width: 27%;
+  height: 5%;
+  color: darkgray;
   font-family: Microsoft JhengHei;
+  font-size: 500%;
+  font-weight: bolder;
 }
 
-.check3{
-  position: absolute;
-  bottom: 46%;
-  left: 28%;
+.search_bar2{
+  position: fixed;
+  top: 32%;
+  left: 7.2%;
+  width: 27%;
+  height: 5%;
+  color: darkgray;
   font-family: Microsoft JhengHei;
+  font-size: 500%;
+  font-weight: bolder;
 }
 
-.check4{
-  position: absolute;
-  bottom: 41%;
-  left: 7%;
-  font-family: Microsoft JhengHei;
-}
 
-.check5{
-  position: absolute;
-  bottom: 41%;
-  left: 18.5%;
-  font-family: Microsoft JhengHei;
+.check_box{
+  width: 6.5%;
+  height: 6.5%;
 }
-
-.check6{
-  position: absolute;
-  bottom: 41%;
-  left: 28%;
-  font-family: Microsoft JhengHei;
-}
-
-.check7{
-  position: absolute;
-  bottom: 36%;
-  left: 7%;
-  font-family: Microsoft JhengHei;
-}
-
-.check8{
-  position: absolute;
-  bottom: 36%;
-  left: 18.5%;
-  font-family: Microsoft JhengHei;
-}
-
-.check9{
-  position: absolute;
-  bottom: 36%;
-  left: 28%;
-  font-family: Microsoft JhengHei;
-}
-
-.check10{
-  position: absolute;
-  bottom: 31%;
-  left: 7%;
-  font-family: Microsoft JhengHei;
-}
-
-.check11{
-  position: absolute;
-  bottom: 31%;
-  left: 18.5%;
-  font-family: Microsoft JhengHei;
-}
-
-.check12{
-  position: absolute;
-  bottom: 24%;
-  left: 7%;
-  font-family: Microsoft JhengHei;
-}
-
-.check13{
-  position: absolute;
-  bottom: 24%;
-  left: 18.5%;
-  font-family: Microsoft JhengHei;
-}
-
-.check14{
-  position: absolute;
-  bottom: 24%;
-  left: 28%;
-  font-family: Microsoft JhengHei;
-}
-
-.check15{
-  position: absolute;
-  bottom: 17%;
-  left: 7%;
-  font-family: Microsoft JhengHei;
-}
-
-.check16{
-  position: absolute;
-  bottom: 17%;
-  left: 18.5%;
-  font-family: Microsoft JhengHei;
-}
-.check17{
-  position: absolute;
-  bottom: 10%;
-  left: 7%;
-  font-family: Microsoft JhengHei;
-}
-
