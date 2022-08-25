@@ -3,7 +3,7 @@ import sub_excel
 
 #function 1: by search
 #input = searchKey
-searchKey = '圖書館'
+searchKey = '風味館'
 
 dbNoList = sub_excel.getDbNoList(searchKey)
 webList = sub_excel.getWebList(dbNoList)
@@ -14,7 +14,7 @@ for i in range (0, len(webList)):
         j+=1
     i+=1
 
-
+"""
 #function 2: by filters
 #input = select filters
 filterKeys = [['金融業','傳統產業'], [], ['100'], ['台50']]
@@ -29,4 +29,4 @@ for i in range (0, len(webList)):
         print (webList[i][j])
         j+=1
     i+=1
-
+"""
