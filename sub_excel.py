@@ -1,12 +1,15 @@
+#import eel
 import pandas
-
-
-reptPath = 'C:\\SUROS_BI\\Panorays_Reports_220810A\\'
-excelFile = 'DBsourceData_220810.xlsx'
+"""
+eel.init('web.html')
+eel.start('test_web.html')
+"""
+reptPath = 'C:\\SUROS_BI\\dbData_PN_220815A1\\'
+excelFile = 'dbData_forAPI_220815.xlsx'
 baseData = pandas.read_excel(excelFile, sheet_name=0, usecols=[0,1,2,3,4,6,7,8,10])
-reptList = pandas.read_excel(excelFile, sheet_name=2, usecols=[0,1,2,3,22])
+reptList = pandas.read_excel(excelFile, sheet_name=1, usecols=[0,1,2,3,22])
 baseHead = ['DB編號', '中文全名', '中文簡稱', '英文全名', '英文簡稱', '別名1', '別名2', '別名3', '股票簡稱']
-reptHead = ['DB編號', '報告檔案夾', 'Date', 'pdfName', 'csvName']
+reptHead = ['DB編號', '報告檔案夾', 'Date', 'pdfSummary', 'csvByVulnerability']
 
 baseDataF = pandas.read_excel(excelFile, sheet_name=0, usecols=[0,16,11,13,14])
 baseHeadF = ['DB編號', '產業別', '上市櫃', '百大', '附註1']
@@ -19,11 +22,12 @@ tw50 = ['台50']    #usecols = [14]
 filterKeysCate = [cateListHtml, stockList, rankList, tw50]
 
 
+#@eel.expose
 #input search key word to get dbNoList
 def getDbNoList (searchKey):
     dbNoList = []
     for j in range (1, 9):    #BaseData search columns length
-        for i in range (1, 1903):    #BaseData search rows length
+        for i in range (0, 1903):    #BaseData search rows length
             cellValue = baseData[baseHead[j]].values[i]    #get cell value on columns by rows
             if searchKey.lower() in str(cellValue).lower():    #if cell contains search key
                 dbNo = str(baseData[baseHead[0]].values[i]).strip()    #get dbNo
@@ -39,11 +43,11 @@ def getWebList (dbNoList):
     countDbNo = len (dbNoList)
     webList = []
     for i in range (0, countDbNo):    #get web List by dbNoList orders
-        for m in range (1, 1673):    #ReportList search rows length
+        for m in range (0, 1673):    #ReportList search rows length
             aList = []
             reptCell = reptList[reptHead[0]].values[m]    #get cell value on dbNo col by rows
             if str(dbNoList[i]).strip() in str(reptCell):    #if find match dbNo
-                reptDate = reptList[reptHead[2]].values[m].strip()    #get report date
+                reptDate = reptList[reptHead[2]].values[m]    #get report date
                 aList.append(reptDate)
                 
                 reptFolder = reptList[reptHead[1]].values[m].strip()    #get report dir
@@ -61,7 +65,7 @@ def getWebList (dbNoList):
                     csvPath = reptPath + reptFolder + '\\' + reptCsv    #get csv path
                 aList.append(csvPath)
                 
-                for n in range (1, 1903):    #basedata search rows length
+                for n in range (0, 1903):    #basedata search rows length
                     baseCell = baseData[baseHead[0]].values[n].strip()    #get cell value on dbNo col by rows
                     if str(dbNoList[i]).strip() in str(baseCell):    #if find match dbNo
                         comFull = baseData[baseHead[1]].values[n].strip()    #get comFull cell value
@@ -94,7 +98,7 @@ def getDbNoListF1 (filterKey):
     fKeyCate = getFKeyCate (filterKey)[0]
     filterKey = getFKeyCate (filterKey)[1]
     dbNoList = []
-    for i in range (1, 1903):    #BaseData search rows length
+    for i in range (0, 1903):    #BaseData search rows length
         cellValue = str(baseDataF[fKeyCate].values[i]).strip()    #get cell value on columns by rows
         if filterKey in cellValue:    #if cell contains filter Key
             dbNo = str(baseDataF[baseHeadF[0]].values[i]).strip()    #get dbNo
@@ -117,7 +121,7 @@ def getDbNoListF1 (filterKey):
             break
 
     dbNoList = []
-    for i in range (1, 1903):    #BaseData search rows length
+    for i in range (0, 1903):    #BaseData search rows length
         cellValue = str(baseDataF[fKeyCate].values[i]).strip()    #get cell value on columns by rows
         if filterKey in cellValue:    #if cell contains filter Key
             dbNo = str(baseDataF[baseHeadF[0]].values[i]).strip()    #get dbNo
