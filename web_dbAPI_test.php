@@ -6,12 +6,53 @@
     </head>
     <body>
         running web_dbAPI_test.php...<br />
+        <br />
         <?php
-        $searchList = shell_exec('python web_dbAPI_main.py "風味館"');
-        echo $searchList;
+        $iptSearch = '高鐵';    //input search key
+        $pathPy = 'python web_dbAPI_main.py ';    //python file path with one space in the end
+        $reList = exec ($pathPy.$iptSearch);    //execute cmd to run python
+        $reList = iconv('big5', 'utf-8', $reList);    //transfer text encode
         ?>
+
+        <button class="icon_search" type="button" name="go_search" id="searchBtn" onclick="testAlert(<?php echo $reList; ?>)"><img src="image/search_2208A.png" /></button>
+        <script>
+            /*
+            function get_input(inputStr){
+                var keySC = inputStr
+
+            }
+
+
+            function testAlert(pyResult){
+                var listArr = pyResult;    //get py list
+                var recLen = listArr.length;    //get records length
+                var listTable = document.querySelector(".list");
+                var oneData = "";
+                var oneRow = "";
+                for (var i = 0; i < recLen-1 ; i++ ){
+                    for (var j = 0; j < 3 ; j++ ){
+                        var oneCell = "<li>" + listArr[i][j] + "</li>";
+                        oneData += oneCell;
+                    }
+                    oneRow += oneData;
+                }
+                listTable.innerHTML = oneRow;
+                console.log(listTable);
+            }
+            */
+            function testAlert(pyResult){
+                var listArr = pyResult;    //get py list
+                alert(listArr[0][2]);
+            }           
+        </script>
     </body>
 </html>
 
 
-
+<!--
+/*
+$reList = exec ('python web_dbAPI_main.py 高鐵');
+$reList = iconv('big5', 'utf-8', $reList);
+var_dump ($reList);
+*/
+-->
