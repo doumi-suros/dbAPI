@@ -1,9 +1,5 @@
-#import eel
 import pandas
-"""
-eel.init('web.html')
-eel.start('test_web.html')
-"""
+
 reptPath = 'C:\\SUROS_BI\\dbData_PN_220815A1\\'
 excelFile = 'dbData_forAPI_220815.xlsx'
 baseData = pandas.read_excel(excelFile, sheet_name=0, usecols=[0,1,2,3,4,6,7,8,10])
@@ -22,7 +18,6 @@ tw50 = ['台50']    #usecols = [14]
 filterKeysCate = [cateListHtml, stockList, rankList, tw50]
 
 
-#@eel.expose
 #input search key word to get dbNoList
 def getDbNoList (searchKey):
     dbNoList = []
@@ -107,29 +102,6 @@ def getDbNoListF1 (filterKey):
         i+=1
     return dbNoList
 
-"""
-#get dbNoList by filtering single column
-def getDbNoListF1 (filterKey):
-    for i in range (0, 4):
-        if filterKey not in filterKeysCate[i]:
-            i+=1
-        else:
-            fKeyCate = str(baseHeadF[i+1])
-            if i == 0:
-                p = cateListHtml.index(filterKey)
-                filterKey = cateList[p]
-            break
-
-    dbNoList = []
-    for i in range (0, 1903):    #BaseData search rows length
-        cellValue = str(baseDataF[fKeyCate].values[i]).strip()    #get cell value on columns by rows
-        if filterKey in cellValue:    #if cell contains filter Key
-            dbNo = str(baseDataF[baseHeadF[0]].values[i]).strip()    #get dbNo
-            if dbNo not in dbNoList:    #exclude same dbNo
-                dbNoList.append(dbNo)    #add new dbNo to list
-        i+=1
-    return dbNoList
-"""
 
 
 #get dbNoList by multiple filters
@@ -192,9 +164,5 @@ def dbNoListFs (filterKeys):
                 dbNoListFsA.remove('x')
         i+=1
     return dbNoListFsA
-
-
-
-
 
 
