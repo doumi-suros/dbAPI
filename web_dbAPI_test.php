@@ -15,15 +15,19 @@
         ?>
 
         <button class="icon_search" type="button" name="go_search" id="searchBtn" onclick="testAlert(<?php echo $reList; ?>)"><img src="image/search_2208A.png" /></button>
+        testTable(<?php echo $reList; ?>)
         <script>
+            testList(<?php echo $reList; ?>);
+
+
             /*
             function get_input(inputStr){
                 var keySC = inputStr
 
             }
+            */
 
-
-            function testAlert(pyResult){
+            function testTable(pyResult){
                 var listArr = pyResult;    //get py list
                 var recLen = listArr.length;    //get records length
                 var listTable = document.querySelector(".list");
@@ -37,12 +41,19 @@
                     oneRow += oneData;
                 }
                 listTable.innerHTML = oneRow;
-                console.log(listTable);
             }
-            */
+            
+           
+            function testList(pyResult){
+                var listArr = pyResult;
+                document.write (listArr[0][2]);
+            }
+
+
+
             function testAlert(pyResult){
                 var listArr = pyResult;    //get py list
-                alert(listArr[0][2]);
+                alert(listArr);
             }           
         </script>
     </body>
