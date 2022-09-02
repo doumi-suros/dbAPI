@@ -1,14 +1,11 @@
 import web_dbAPI_sub
 import sys
-import json
 
 
 #function 1: by search
 #input = searchKey
 
-iptSearch = '風味館'
-
-#iptSearch = sys.argv[1]    #receive php parameter#1
+iptSearch = sys.argv[1]    #receive php parameter#1
 
 def fx_search (searchKey):
     dbNoList = web_dbAPI_sub.getDbNoList(searchKey)
@@ -26,7 +23,7 @@ reList = fx_search(iptSearch)
 if reList != False:
     print (reList)
 else:
-    print ('SORRY, NO DATA...')
+    print (0)
 
 
 #print(reList)

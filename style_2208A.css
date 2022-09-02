@@ -9,6 +9,7 @@ body{
 
 div{
   font-family: Microsoft JhengHei;
+  color: #ffffff;
 }
 
 ul{
@@ -78,7 +79,7 @@ footer{
   left: 40%;
   height: 10%;
   font-family: Microsoft JhengHei;
-  color: #DCFFFA;
+  color: #ffffff;
   font-size: 200%;
   text-align: center;
 }

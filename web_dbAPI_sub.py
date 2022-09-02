@@ -1,3 +1,4 @@
+from cmath import nan
 import pandas
 
 reptPath = 'C:\\SUROS_BI\\dbData_PN_220815A1\\'
@@ -61,11 +62,11 @@ def getWebList (dbNoList):
                 aList.append(csvPath)
                 
                 for n in range (0, 1903):    #basedata search rows length
-                    baseCell = baseData[baseHead[0]].values[n].strip()    #get cell value on dbNo col by rows
+                    baseCell = str(baseData[baseHead[0]].values[n]).strip()    #get cell value on dbNo col by rows
                     if str(dbNoList[i]).strip() in str(baseCell):    #if find match dbNo
-                        comFull = baseData[baseHead[1]].values[n].strip()    #get comFull cell value
-                        if comFull == None:    #if no chinese full name
-                            comFull = baseData[baseHead[4]].values[n].strip()    #company = eng short name
+                        comFull = str(baseData[baseHead[1]].values[n]).strip()    #get comFull cell value
+                        if comFull == 'nan':    #if no chinese full name
+                            comFull = str(baseData[baseHead[4]].values[n]).strip()    #company = eng short name
                         aList.insert(0, comFull)
                         break
                     n+=1
@@ -86,6 +87,19 @@ def getFKeyCate (filterKey):
                 p = cateListHtml.index(filterKey)
                 filterKey = cateList[p]
             return fKeyCate, filterKey
+
+
+
+#get filter key category type index
+def getFKeyIndex (filterKey):
+    for i in range (0, 4):
+        if filterKey not in filterKeysCate[i]:
+            i+=1
+        else:
+            return i
+
+
+
 
 
 #get dbNoList by filtering single column

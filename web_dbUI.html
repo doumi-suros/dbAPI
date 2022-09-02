@@ -19,8 +19,8 @@
                 <div class="block_35x30">    <!--search-->
                     <input class ="search_bar1" type="text" name="search_name" id="search_nameKey" placeholder="請輸公司名" />
                     <input class ="search_bar2" type="text" name="search_url" id="search_urlKey" placeholder="請輸入網址" />
-                    <button class="icon_search" type="button" name="go_search" id="searchBtn"><img src="image/search_2208A.png" /></button>
-                    <button class="icon_del" type="button" name="clear_input" id="clearBtn"><img src="image/del_2208A.png" /></button>
+                    <button class="icon_search" type="submit" name="go_search" id="searchBtn" onclick="<?php echo $reList; ?>"><img src="image/search_2208A.png" /></button>
+                    <button class="icon_del" type="reset" name="clear_input" id="clearBtn"><img src="image/del_2208A.png" /></button>
                 </div>
                 <hr class="line_35A" />
                 <div class="block_35x50">    <!--filter-->
@@ -202,10 +202,17 @@
                         </ul>
                     </div>
                 </div>
-                <footer>
-                    <p>Copyright © 2022 SUROS Inc. 蘇羅士科技股份有限公司</p>
-                </footer>
             </form>
+            <?php
+            $iptSearch = $_POST['search_name'];    //input search key
+            $pathPy = 'python web_dbAPI_main.py ';    //python file path with one space in the end
+            $reList = exec ($pathPy.$iptSearch);    //execute cmd to run python
+            $reList = iconv('big5', 'utf-8', $reList);    //transfer text encode
+            echo $reList;
+            ?>
+            <footer>
+                <p>Copyright © 2022 SUROS Inc. 蘇羅士科技股份有限公司</p>
+            </footer>
         </div>
     </body>
 </html>

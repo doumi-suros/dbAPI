@@ -18,36 +18,36 @@
             <form method="post">
                 <div class="block_35x30">    <!--search-->
                     <input class ="search_bar1" type="text" name="search_name" id="searcsth_nameKey" placeholder="請輸公司名" />
-                    <input class ="search_bar2" type="text" name="search_url" id="search_urlKey" placeholder="請輸入網址" />
-                    <button class="icon_search" type="submit" name="go_search" id="searchBtn" onclick="<?php echo ($searchKey); ?>"><img src="image/search_2208A.png" /></button>
+                    <input class ="search_bar2" type="text" name="search_url" id="search_urlKey" />    <!--placeholder="請輸入網址"-->
+                    <button class="icon_search" type="submit" name="go_search" id="searchBtn" onclick="<?php print_r ($phpArr2D); ?>"><img src="image/search_2208A.png" /></button>
                     <button class="icon_del" type="reset" name="clear_input" id="clearBtn"><img src="image/del_2208A.png" /></button>
                 </div>
                 <hr class="line_35A" />
                 <div class="block_35x50">    <!--filter-->
-                    <input class="check_box" type="checkbox" name="filterA[]" value="教育知識" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="edu" />
                     <label class="txt_with_box">教育知識</label>
-                    <input class="check_box" type="checkbox" name="filterA[]" value="金融業" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="fin" />
                     <label class="txt_with_box">金融業</label>
-                    <input class="check_box" type="checkbox" name="filterA[]" value="政府機關" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="gov" />
                     <label class="txt_with_box">政府機關</label>
                     <br />
-                    <input class="check_box" type="checkbox" name="filterA[]" value="能源環境" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="life" />
                     <label class="txt_with_box">能源環境</label>
-                    <input class="check_box" type="checkbox" name="filterA[]" value="醫藥業" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="medi" />
                     <label class="txt_with_box">醫藥業</label>
-                    <input class="check_box" type="checkbox" name="filterA[]" value="電網資訊" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="net" />
                     <label class="txt_with_box">電網資訊</label>
                     <br />
-                    <input class="check_box" type="checkbox" name="filterA[]" value="傳統產業" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="manu" />
                     <label class="txt_with_box">傳統產業</label>
-                    <input class="check_box" type="checkbox" name="filterA[]" value="服務業" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="serv" />
                     <label class="txt_with_box">服務業</label>
-                    <input class="check_box" type="checkbox" name="filterA[]" value="百貨零售" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="stor" />
                     <label class="txt_with_box">百貨零售</label>
                     <br />
-                    <input class="check_box" type="checkbox" name="filterA[]" value="電子科技" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="tech" />
                     <label class="txt_with_box">電子科技</label>
-                    <input class="check_box" type="checkbox" name="filterA[]" value="其它" />
+                    <input class="check_box" type="checkbox" name="filterA[]" value="com" />
                     <label class="txt_with_box">其它</label>
                     <hr class="line_35B1" />
                     <br />
@@ -78,8 +78,8 @@
                     <label class="txt_with_box">台50</label>
                     <br />
                     <br />
-                    <button class="icon_filter" type="submit" name="go_filter" id="filterBtn" onclick="<?php echo $iptFilterA; ?>"><img src="image/filter_2208A.png"></button>
-                    <button class="icon_no_filter" type="reset" name="clear_filters" id="clearBtn"><img src="image/no_filter_2208A.png"></button>
+                    <!--<button class="icon_filter" type="submit" name="go_filter" id="filterBtn" onclick="<?php //print_r ($phpArr2D); ?>"><img src="image/filter_2208A.png"></button>
+                    <button class="icon_no_filter" type="reset" name="clear_filters" id="clearBtn"><img src="image/no_filter_2208A.png"></button>-->
                 </div>
             </form>
             <div class="block_65x80">    <!--result list-->
@@ -90,32 +90,19 @@
                 </ul>
                 <div class="list_row">
                     <?php
-                    /*function go_search ($searchKey) {
+                    function go_search ($searchKey) {
                         $pathPySearch = 'python web_dbAPI_search.py ';    //python file path with one space in the end
                         $pyReSearch = exec ($pathPySearch.$searchKey);    //execute cmd to run python
                         $pyReSearch = iconv('big5', 'utf-8', $pyReSearch);    //get python search result
-                        if ((isset ($pyReSearch) == false) || (empty($pyReSearch) == true)) {
+                        if (empty($pyReSearch) == true) {
                             return 0;
                         } else {
                             return $pyReSearch;
                         }
-                    }*/
+                    }
+
                     
-
-                    /*function go_filter ($filterKey) {
-                        $pathPyFilter = 'python_test.py ';    //python file path with one space in the end
-                        $pyReFilter = exec ($pathPyFilter.$filterKey);    //execute cmd to run python
-                        $pyReFilter = iconv('big5', 'utf-8', $pyReFilter);    //get python filter result
-                        echo $pyReFilter;
-                        if (empty($pyReFilter) == true) {
-                            return 0;
-                        } else {
-                            return $pyReFilter;
-                        }
-                    }*/
-
-
-                    /*function go_filter ($filterKey) {
+                    function go_filter ($filterKey) {
                         $iptFilterA = '';
                         for ($i = 0; $i < count($filterKey); $i++){
                             if ($i == 0){
@@ -124,19 +111,16 @@
                                 $iptFilterA.=',';
                                 $iptFilterA.=$filterKey[$i];
                             }
-                            print_r ($iptFilterA);
                         }
-                        print_r ($iptFilterA);
                         $pathPyFilter = 'python_test.py ';    //python file path with one space in the end
                         $pyReFilter = exec ($pathPyFilter.$iptFilterA);    //execute cmd to run python
                         $pyReFilter = iconv('big5', 'utf-8', $pyReFilter);    //get python filter result
-                        echo $pyReFilter;
                         if (empty($pyReFilter) == true) {
                             return 0;
                         } else {
                             return $pyReFilter;
                         }
-                    }*/
+                    }
                     
                     
                     function str2arr ($str) {
@@ -152,7 +136,7 @@
                     }
                     
                     
-                    /*function get_pyList () {
+                    function get_pyList () {
                         if (isset ($_POST['search_name']) == true) {
                             $pyReStrS = go_search ($_POST['search_name']);
                             if (empty ($pyReStrS) == true) {
@@ -172,49 +156,10 @@
                                 return $phpArrF;
                             }
                         }
-                    }*/
-                    
-                    /*
-                    $searchKey = $_POST['search_name'];
-                    echo $searchKey;
-                    $pathPySearch = 'python web_dbAPI_search.py ';    //python file path with one space in the end
-                    $pyReSearch = exec ($pathPySearch.$searchKey);    //execute cmd to run python
-                    $pyReSearch = iconv('big5', 'utf-8', $pyReSearch);    //get python search result
-                    if ((isset ($pyReSearch) == false) || (empty($pyReSearch) == true)) {
-                        $searchKey = 0;
-                    } else {
-                        echo $searchKey.'<br />';
-                    }*/
-                    
-                    ///*
-                    $filterKey = $_POST['filterA'];
-                    if ((isset ($_POST['filterA']) == true) && (empty ($filterKey) == false)) {
-                        $iptFilterA = $filterKey[0];
-                        for ($i = 1; $i < count($filterKey); $i++){
-                            $iptFilterA.=',';
-                            $iptFilterA.=$filterKey[$i];
-                        }
-                    } else {
-                        $iptFilterA = 0;
                     }
-                    echo $iptFilterA.'<br />';
-                    
-                    $pathPyFilter = 'web_dbAPI_filter.py ';    //python file path with one space in the end
-                    $pyReFilter = exec ($pathPyFilter.$iptFilterA);    //execute cmd to run python
-                    $pyReFilter = iconv('big5', 'utf-8//ignore', $pyReFilter);    //get python filter result
-                    if ((isset ($pyReFilter) == false) || (empty ($pyReFilter) == true)) {
-                        $pyReFilter = 0;
-                    } else {
-                        echo $pyReFilter.'<br />';
-                    }
-                    echo $pyReFilter;
-                    
-                    //*/
 
                     
-                    
-
-                    /*$phpArr2D = get_pyList ();
+                    $phpArr2D = get_pyList ();
                     if (empty ($phpArr2D) == false) {
                         for ($i = 0; $i < count($phpArr2D); $i++ ){
                             echo '<ul>';
@@ -239,7 +184,7 @@
                     } else {
                         echo '<ul>';
                         echo '<li class="list_name">SORRY, NO DATA...</li></ul>';
-                    }*/
+                    }
                     ?>
                 </div>
             <footer>
